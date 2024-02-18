@@ -8,5 +8,5 @@ def on_progress(stream, chunk, bytes_remaining):
     return
 
 def on_complete():
-    print('\033[92m' + "Progress: 100%" + '\033[0m')
+    print(f"\033[92m Progress: 100% \033[0m")
     return

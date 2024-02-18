@@ -15,4 +15,4 @@ def download_yt(url, output_dir) -> str:
 
     on_complete()
 
-    return str(video.title + '.webm')
+    return str(video.title)

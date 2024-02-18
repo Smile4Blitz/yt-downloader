@@ -43,7 +43,10 @@ def run_discord_bot():
                 await edit_message(message_obj, response_obj, "Couldn't find link.")
                 return
             
-            link = await asyncio.create_task(download(url, output_dir, filebin, edit_message, message_obj, response_obj))
+            if '--audio-only' in str(message.content):
+                link = await asyncio.create_task(download(url, output_dir, filebin, True, edit_message, message_obj, response_obj))
+            else:
+                link = await asyncio.create_task(download(url, output_dir, filebin, False, edit_message, message_obj, response_obj))
 
             await edit_message(message_obj, response_obj, f" {link}")
 
