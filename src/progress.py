@@ -1,4 +1,5 @@
 def on_progress(stream, chunk, bytes_remaining):
+    global response_obj, message_obj
     total_size = stream.filesize
     bytes_downloaded = total_size - bytes_remaining
     perc_completed = bytes_downloaded / total_size * 100
